@@ -1,7 +1,15 @@
-<h1> {{form_type}} post</h1>
+{% extends 'blog/base.html' %}
 
-<form method="Post" action=".">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">{{form_type}} Post</button>
-</form>
+{% block title %}{{ form_type }} Post{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h1>{{ form_type }} Post</h1>
+    <form method="POST" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">{{ form_type }} Post</button>
+        <a href="/posts/" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
