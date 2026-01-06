@@ -1,3 +1,26 @@
+/* ========================================
+   THE LIBRARY BLOG - A Classic Reading Experience
+   ======================================== */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+/* CSS Variables - Library Color Palette */
+:root {
+    --parchment: #f5f0e6;
+    --cream: #faf8f3;
+    --leather-brown: #8b4513;
+    --dark-leather: #654321;
+    --antique-gold: #c9a227;
+    --ink-black: #1a1a1a;
+    --faded-ink: #4a4a4a;
+    --aged-paper: #e8e0d0;
+    --mahogany: #420d09;
+    --forest-green: #2d4a3e;
+    --burgundy: #722f37;
+    --shadow: rgba(0, 0, 0, 0.15);
+}
+
 /* Base Styles */
 * {
     margin: 0;
@@ -6,20 +29,51 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    line-height: 1.8;
+    color: var(--ink-black);
+    background-color: var(--parchment);
+    background-image: 
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c4a8' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Header & Navigation */
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    color: var(--dark-leather);
+    letter-spacing: 0.5px;
+}
+
+p {
+    font-family: 'Lora', Georgia, serif;
+    color: var(--faded-ink);
+}
+
+/* ========================================
+   HEADER - Antique Library Style
+   ======================================== */
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background: linear-gradient(135deg, var(--dark-leather) 0%, var(--mahogany) 100%);
+    color: var(--cream);
+    padding: 0;
+    box-shadow: 0 4px 20px var(--shadow);
+    border-bottom: 4px solid var(--antique-gold);
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23c9a227' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    pointer-events: none;
 }
 
 .navbar {
@@ -28,203 +82,488 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 1.5rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo::before {
+    content: '📚';
+    font-size: 2rem;
 }
 
 .logo a {
-    color: #fff;
+    color: var(--cream);
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
+}
+
+.nav-links li {
+    position: relative;
 }
 
 .nav-links a {
-    color: #fff;
+    color: var(--cream);
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--antique-gold);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #4CAF50;
+    color: var(--antique-gold);
 }
 
-/* Main Content */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ========================================
+   MAIN CONTENT AREA
+   ======================================== */
 .content {
     flex: 1;
-    max-width: 1200px;
-    margin: 2rem auto;
+    max-width: 900px;
+    margin: 3rem auto;
     padding: 0 2rem;
     width: 100%;
 }
 
-/* Blog List Styles */
+.page-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--dark-leather);
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.page-title::after {
+    content: '❧';
+    display: block;
+    font-size: 1.5rem;
+    color: var(--antique-gold);
+    margin-top: 0.5rem;
+}
+
+/* ========================================
+   BLOG LIST - Library Card Catalog Style
+   ======================================== */
 .blog-list {
     list-style: none;
+    display: grid;
+    gap: 1.5rem;
 }
 
 .blog-list li {
-    background: #fff;
-    margin-bottom: 1rem;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: var(--cream);
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(139, 69, 19, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, var(--leather-brown) 0%, var(--dark-leather) 100%);
+}
+
+.blog-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        inset 0 0 0 1px rgba(139, 69, 19, 0.2);
 }
 
 .blog-list a {
+    display: block;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
     text-decoration: none;
-    color: #333;
-    font-size: 1.2rem;
+    color: var(--ink-black);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.3rem;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .blog-list a:hover {
-    color: #4CAF50;
+    color: var(--leather-brown);
 }
 
-/* Blog Detail Styles */
+.blog-list a::before {
+    content: '§ ';
+    color: var(--antique-gold);
+    font-weight: 400;
+}
+
+/* ========================================
+   BLOG DETAIL - Open Book Style
+   ======================================== */
 .blog-detail {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: var(--cream);
+    padding: 3rem 4rem;
+    border-radius: 4px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1),
+        inset 0 0 80px rgba(139, 69, 19, 0.03);
+    position: relative;
+    border: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+.blog-detail::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(139, 69, 19, 0.1), transparent);
 }
 
 .blog-detail h1 {
-    margin-bottom: 1rem;
-    color: #333;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    color: var(--dark-leather);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    line-height: 1.3;
 }
 
-.blog-detail .content-body {
-    line-height: 1.8;
+.blog-detail h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--antique-gold), transparent);
+    margin: 1rem auto 2rem;
+}
+
+.content-body {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--faded-ink);
+    text-align: justify;
     margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.content-body::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4rem;
+    float: left;
+    line-height: 1;
+    padding-right: 1rem;
+    color: var(--leather-brown);
+    font-weight: 700;
 }
 
 .blog-actions {
     display: flex;
+    justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(139, 69, 19, 0.1);
 }
 
+/* ========================================
+   BUTTONS - Vintage Style
+   ======================================== */
 .btn {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.75rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
     cursor: pointer;
+    border: 2px solid transparent;
 }
 
 .btn-primary {
-    background: #4CAF50;
-    color: #fff;
+    background: var(--forest-green);
+    color: var(--cream);
+    border-color: var(--forest-green);
 }
 
 .btn-primary:hover {
-    background: #45a049;
-}
-
-.btn-danger {
-    background: #f44336;
-    color: #fff;
-}
-
-.btn-danger:hover {
-    background: #da190b;
+    background: transparent;
+    color: var(--forest-green);
 }
 
 .btn-secondary {
-    background: #757575;
-    color: #fff;
+    background: transparent;
+    color: var(--faded-ink);
+    border-color: var(--faded-ink);
 }
 
 .btn-secondary:hover {
-    background: #616161;
+    background: var(--faded-ink);
+    color: var(--cream);
 }
 
-/* Form Styles */
+.btn-danger {
+    background: var(--burgundy);
+    color: var(--cream);
+    border-color: var(--burgundy);
+}
+
+.btn-danger:hover {
+    background: transparent;
+    color: var(--burgundy);
+}
+
+/* ========================================
+   FORM STYLES - Vintage Paper Form
+   ======================================== */
 .form-container {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    background: var(--cream);
+    padding: 3rem;
+    border-radius: 4px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(139, 69, 19, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .form-container h1 {
-    margin-bottom: 1.5rem;
-    color: #333;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    color: var(--dark-leather);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.form-container form p {
-    margin-bottom: 1rem;
+.form-container h1::after {
+    content: '✦';
+    display: block;
+    color: var(--antique-gold);
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-container p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .form-container label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: var(--dark-leather);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
 }
 
 .form-container input[type="text"],
 .form-container textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    font-family: 'Lora', Georgia, serif;
     font-size: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--aged-paper);
+    border-radius: 3px;
+    background: var(--parchment);
+    color: var(--ink-black);
+    transition: all 0.3s ease;
+    resize: vertical;
 }
 
 .form-container input[type="text"]:focus,
 .form-container textarea:focus {
     outline: none;
-    border-color: #4CAF50;
+    border-color: var(--leather-brown);
+    box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
 }
 
 .form-container textarea {
-    min-height: 150px;
-    resize: vertical;
+    min-height: 200px;
+    line-height: 1.8;
 }
 
-/* Footer */
+.form-container button[type="submit"] {
+    align-self: flex-start;
+}
+
+.form-container .btn {
+    margin-right: 0.5rem;
+}
+
+/* ========================================
+   FOOTER - Library Footer
+   ======================================== */
 footer {
-    background: #333;
-    color: #fff;
+    background: linear-gradient(135deg, var(--dark-leather) 0%, var(--mahogany) 100%);
+    color: var(--cream);
     text-align: center;
-    padding: 1rem 0;
+    padding: 2rem;
     margin-top: auto;
+    border-top: 4px solid var(--antique-gold);
 }
 
-/* Page Title */
-.page-title {
-    margin-bottom: 1.5rem;
-    color: #333;
+footer p {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--cream);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.9;
 }
 
-/* Responsive Design */
+footer p::before {
+    content: '📖 ';
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         gap: 1rem;
+        padding: 1rem;
     }
-
+    
     .nav-links {
-        gap: 1rem;
+        gap: 1.5rem;
     }
-
+    
     .content {
         padding: 0 1rem;
+        margin: 2rem auto;
     }
-
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .blog-detail {
+        padding: 2rem 1.5rem;
+    }
+    
+    .blog-detail h1 {
+        font-size: 1.8rem;
+    }
+    
+    .content-body {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .content-body::first-letter {
+        font-size: 3rem;
+    }
+    
     .blog-actions {
         flex-direction: column;
     }
+    
+    .btn {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .form-container {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-list li,
+.blog-detail,
+.form-container {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.blog-list li:nth-child(1) { animation-delay: 0.1s; }
+.blog-list li:nth-child(2) { animation-delay: 0.2s; }
+.blog-list li:nth-child(3) { animation-delay: 0.3s; }
+.blog-list li:nth-child(4) { animation-delay: 0.4s; }
+.blog-list li:nth-child(5) { animation-delay: 0.5s; }
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--aged-paper);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--leather-brown);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-leather);
 }

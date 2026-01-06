@@ -1,15 +1,17 @@
 {% extends 'blog/base.html' %}
 
-{% block title %}{{ form_type }} Post{% endblock %}
+{% block title %}{{ form_type }} Entry — The Library{% endblock %}
 
 {% block content %}
 <div class="form-container">
-    <h1>{{ form_type }} Post</h1>
+    <h1>{{ form_type }} Entry</h1>
     <form method="POST" action=".">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">{{ form_type }} Post</button>
-        <a href="/posts/" class="btn btn-secondary">Cancel</a>
+        <div class="blog-actions">
+            <button type="submit" class="btn btn-primary">Save Entry</button>
+            <a href="/posts/" class="btn btn-secondary">Cancel</a>
+        </div>
     </form>
 </div>
 {% endblock %}

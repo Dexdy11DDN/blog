@@ -1,15 +1,15 @@
 {% extends 'blog/base.html' %}
 
-{% block title %}Blog List{% endblock %}
+{% block title %}The Library — Collection{% endblock %}
 
 {% block content %}
-<h1 class="page-title">My Blog Posts</h1>
+<h1 class="page-title">The Collection</h1>
 
 <ul class="blog-list">
     {% for post in blog_list %}
         <li><a href="/posts/{{ post.id }}/">{{ post.title }}</a></li>
     {% empty %}
-        <li>No posts yet. <a href="/posts/create/">Create your first post!</a></li>
+        <li><a href="/posts/create/">The shelves are empty. Begin your first entry...</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
