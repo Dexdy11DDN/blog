@@ -117,4 +117,14 @@ CSRF_TRUSTED_ORIGINS = [
  'http://*.cloudworkstations.dev/',
  'https://cloudworkstations.dev/',
  'http://cloudworkstations.dev/',
+ 'https://*.web.app',
+ 'http://*.web.app',
+ 'https://*.firebaseapp.com',
+ 'http://*.firebaseapp.com',
 ]
+
+# Additional CSRF settings for Firebase hosting
+CSRF_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True
